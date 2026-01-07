@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>English Vocabulary Test</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <!-- Loading Screen -->
+        <div id="loadingScreen">
+            <div class="loader"></div>
+            <div class="loading-text">النتاج العلمي لقيصر الفلاح يقدم..</div>
+        </div>
+
+        <!-- Main App -->
+        <div class="app-container">
+            <!-- Header -->
+            <header class="header">
+                <h1>English Vocabulary Test</h1>
+                <p>Interactive learning system</p>
+            </header>
+
+            <!-- Settings Panel -->
+            <div class="settings-panel">
+                <div class="setting-group">
+                    <label>Unit</label>
+                    <select id="unitSelect"></select>
+                </div>
+                <div class="setting-group">
+                    <label>Category</label>
+                    <select id="categorySelect"></select>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs-container">
+                <button class="tab active" data-tab="matching">
+                    Term Matching
+                </button>
+                <button class="tab" data-tab="filling">
+                    Fill in the Blank
+                </button>
+                <button class="tab" data-tab="quiz">Quick Quiz</button>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-label">Score</div>
+                    <div class="stat-value" id="score">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Time</div>
+                    <div class="stat-value" id="timer">300</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Progress</div>
+                    <div class="stat-value" id="progress">0%</div>
+                </div>
+            </div>
+
+            <!-- Instruction Banner -->
+            <div class="instruction-banner" id="instruction">
+                Select a term and match it with its correct definition
+            </div>
+
+            <!-- Game Content -->
+            <div id="gameContent">
+                <!-- Matching Game -->
+                <div id="matchingGame" class="tab-content active">
+                    <div class="matching-grid">
+                        <div class="matching-column">
+                            <h3>Terms</h3>
+                            <div id="terms"></div>
+                        </div>
+                        <div class="matching-column">
+                            <h3>Definitions</h3>
+                            <div id="definitions"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fill in the Blank -->
+                <div id="fillingGame" class="tab-content">
+                    <div class="fill-container">
+                        <div class="sentence-card" id="fillSentence"></div>
+                        <div class="options-grid" id="fillOptions"></div>
+                    </div>
+                </div>
+
+                <!-- Quick Quiz -->
+                <div id="quizGame" class="tab-content">
+                    <div class="quiz-container">
+                        <div id="quizContent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Toast -->
+        <div id="feedbackToast" class="feedback-toast"></div>
+
+        <script src="data.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
